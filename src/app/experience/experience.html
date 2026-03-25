@@ -1,0 +1,55 @@
+<section id="experience">
+  <div class="container">
+    <div class="exp-header">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title">Where I've Worked</h2>
+    </div>
+    <div class="exp-layout">
+      <div class="timeline">
+        @for (job of jobs; track job.company) {
+          <div class="timeline-item">
+            <div class="tl-dot" [style.background]="job.color" [style.boxShadow]="'0 0 16px ' + job.color + '55'"></div>
+            <div class="tl-card">
+              <div class="tl-top">
+                <div>
+                  <h3 class="role">{{ job.role }}</h3>
+                  <span class="company" [style.color]="job.color">{{ job.company }}</span>
+                </div>
+                <div class="meta">
+                  <span class="period">{{ job.period }}</span>
+                  <span class="badge-type">{{ job.type }}</span>
+                </div>
+              </div>
+              <ul class="points">
+                @for (pt of job.points; track pt) {
+                  <li>{{ pt }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="education">
+        <h3 class="edu-title">Education</h3>
+        @for (edu of education; track edu.institution) {
+          <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+            <div>
+              <h4>{{ edu.degree }}</h4>
+              <p class="edu-inst">{{ edu.institution }} · {{ edu.period }}</p>
+              <p class="edu-desc">{{ edu.desc }}</p>
+            </div>
+          </div>
+        }
+        <div class="cert-card">
+          <div class="cert-icon">🏆</div>
+          <div>
+            <h4>Full Stack Diploma</h4>
+            <p class="edu-inst">Route IT Training Center</p>
+            <p class="edu-desc">Certified completion of comprehensive full-stack web development program.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

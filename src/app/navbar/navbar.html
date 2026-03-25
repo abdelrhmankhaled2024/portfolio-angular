@@ -1,0 +1,14 @@
+<nav [class.scrolled]="scrolled()">
+  <div class="nav-inner container">
+    <a class="logo" (click)="scrollTo('#hero')">AK<span>.</span></a>
+    <ul class="nav-links" [class.open]="menuOpen()">
+      @for (link of links; track link.label) {
+        <li><a (click)="scrollTo(link.href)">{{ link.label }}</a></li>
+      }
+      <li class="cta-li"><a href="mailto:abdelrhmankhaled060@gmail.com" class="cta-btn">Hire Me</a></li>
+    </ul>
+    <button class="burger" (click)="toggle()" [class.active]="menuOpen()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
